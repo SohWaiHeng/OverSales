@@ -17,41 +17,20 @@ const Home = () => {
     const ArrangeComponent = () => {
         let i = 0;
         return (
-            <Box>
-                {filteredList.map((props, index) => {
-                    if (i % 2 === 0) {
+            <Box mt = "50px">
+                {filteredList.map(() => {
+                    if (i % 2 === 0 && i < filteredList.length) {
+                        i += 2;
                         return (
-                            <Flex justifyContent = "space-around">
-                                <SmallCard {...filteredList[i]} />
-                                <SmallCard {...filteredList[i + 1]} />
+                            <Flex justifyContent = "space-around" mb = "100px">
+                                <SmallCard {...filteredList[i - 2]} />
+                                <SmallCard {...filteredList[i - 1]} />
                             </Flex>
-                        )
-                    }
-                    else {
-                        return (
-                            <div></div>
                         )
                     }
                 })}
             </Box>
         )
-
-        // for (let i = 0; i < filteredList.length; i++) {
-        //     if (i % 2 == 0) {
-        //         return (
-        //             <Flex>
-        //                 <SmallCard {...filteredList[i]} />
-        //             </Flex>
-        //         )
-        //     }
-        //     else{
-        //         return (
-        //             <Box>
-        //                 <SmallCard {...filteredList[i]} />
-        //             </Box>
-        //         )
-        //     }
-        // }
     }
 
     return (
