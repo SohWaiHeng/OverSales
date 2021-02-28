@@ -9,7 +9,7 @@ const Layout = ({children}) => {
     const defaultHeight = 75;
 
     return (
-        <Box minH = {"100vh"} color = "gray.900">
+        <Box minH = {"100vh"} color = "gray.900" font>
             {/* navbar */}
             <Box
                 ref = {navBarContainerRef}
