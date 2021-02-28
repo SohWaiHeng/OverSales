@@ -7,6 +7,7 @@ import { Box } from "@chakra-ui/react";
 const Content = styled.div`
     padding: 20px 40px;
     width: 100%;
+    min-height: 100vh;
     height: 100%;
 `
 
