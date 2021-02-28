@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAlignJustify, faFilter, faMapMarkerAlt, faBox, faDollarSign, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -34,7 +34,11 @@ const Measurement = ({text}) => {
 
 const Sidebar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const [starNumber, changeStarNumber] = useState(0);
     const initialRef = useRef();
+    const starChanged = (n)=>{
+        changeStarNumber(n);
+    }
 
     return (
         <Box>
@@ -148,7 +152,7 @@ const Sidebar = () => {
 
                                 <Box mt = "20px">
                                     <FormLabel>Minimum Rating:</FormLabel>
-                                    <Stars />
+                                    <Stars number={starNumber} onChange={starChanged} interactable/>
                                 </Box>
                                 
                             </FormControl>
