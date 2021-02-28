@@ -31,9 +31,7 @@ const Sidebar = () => {
                                     <Input rounded = "20px" placeholder = "Trafalgar D Law" />
                                     <InputRightElement children = {<SearchIcon />} />
                                 </InputGroup>
-                            </FormControl>
 
-                            <FormControl>
                                 <FormLabel>Filter Options</FormLabel>
                             </FormControl>
                         </DrawerBody>
