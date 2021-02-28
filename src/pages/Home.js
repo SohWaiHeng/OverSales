@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import BigCard from "../components/BigCard";
 import SellerList from "../common/Seller";
+import SmallCard from "../components/SmallCard";
 
 const Home = () => {
     const [filteredList, setFilteredList] = useState([]);
@@ -11,8 +12,8 @@ const Home = () => {
         setFilteredList(SellerList);
     }, []);
     return (
-        <Layout sideBar={<Sidebar></Sidebar>}>
-            
+        <Layout sideBar={<Sidebar />}>
+            <SmallCard />
         </Layout>
     );
 }
