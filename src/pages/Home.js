@@ -9,10 +9,55 @@ import { Flex, Box } from "@chakra-ui/react";
 
 const Home = () => {
     const [filteredList, setFilteredList] = useState([]);
+    const [searchName, setSearchName] = useState("");
+    const [fromDestination, setFromDestination] = useState("");
+    const [toDestination, setToDestination] = useState("");
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
+    const [length, setLength] = useState(0);
+    const [weight, setWeight] = useState(0);
+    const [minPrice, setMinPrice] = useState(0);
+    const [maxPrice, setMaxPrice] = useState(0);
+    const [rating, setRating] = useState(0);
 
     useEffect(()=>{
         setFilteredList(SellerList);
     }, []);
+
+    useEffect(()=>{
+        var newList = [...SellerList];
+        if (searchName) {
+            newList = newList.filter(ele => ele.name.includes(searchName));
+        }
+        if (fromDestination) {
+            newList = newList.filter(ele => ele.fromCountry === fromDestination);
+        }
+        if (toDestination) {
+            newList = newList.filter(ele => ele.toCountry === toDestination);
+        }
+        if (width) {
+            newList = newList.filter(ele => ele.width === width);
+        }
+        if (height) {
+            newList = newList.filter(ele => ele.height === height);
+        }
+        if (length) {
+            newList = newList.filter(ele => ele.length === length);
+        }
+        if (weight) {
+            newList = newList.filter(ele => ele.weight === weight);
+        }
+        if (minPrice) {
+            newList = newList.filter(ele => ele.price >= minPrice);
+        }
+        if (maxPrice) {
+            newList = newList.filter(ele => ele.price <= maxPrice);
+        }
+        if (rating) {
+            newList = newList.filter(ele => ele.rating >= rating);
+        }
+        setFilteredList(newList);
+    }, [searchName, fromDestination, toDestination, width, height, length, weight, minPrice, maxPrice, rating]);
 
     const ArrangeComponent = () => {
         let i = 0;
@@ -34,7 +79,28 @@ const Home = () => {
     }
 
     return (
-        <Layout sideBar={<Sidebar filteredList />}>
+        <Layout sideBar={<Sidebar
+                            searchName={searchName}
+                            setSearchName={setSearchName}
+                            fromDestination={fromDestination}
+                            setFromDestination={setFromDestination}
+                            toDestination={toDestination}
+                            setToDestination={setToDestination}
+                            width={width}
+                            setWidth={setWidth}
+                            height={height}
+                            setHeight={setHeight}
+                            length={length}
+                            setLength={setLength}
+                            weight={weight}
+                            setWeight={setWeight}
+                            minPrice={minPrice}
+                            setMinPrice={setMinPrice}
+                            maxPrice={maxPrice}
+                            setMaxPrice={setMaxPrice}
+                            rating={rating}
+                            setRating={setRating}
+        />}>
             <ArrangeComponent />
         </Layout>
     );

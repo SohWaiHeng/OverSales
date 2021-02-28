@@ -179,7 +179,7 @@ const BigCard = (props) => {
                 </Row>
                 <MinimiseContainer>
                     <IconContainer style={{color:Color.green4}}>
-                        <FontAwesomeIcon icon = {faCompressAlt} size="2x"/>
+                        <FontAwesomeIcon icon = {faCompressAlt} size="2x" />
                     </IconContainer>
                 </MinimiseContainer>
             </ContentContainer>
