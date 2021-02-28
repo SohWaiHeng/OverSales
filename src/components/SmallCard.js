@@ -12,10 +12,10 @@ const property = {
 }
 
 
-const SmallCard = () => {
+const SmallCard = ({name, rating, fromCountry, toCountry, dimension, weight, price}) => {
     return (
         <>
-            <Flex justifyContent="space-around">
+            <Flex>
                 <Box 
                     height = "650px" 
                     width = "400px" 
@@ -31,21 +31,21 @@ const SmallCard = () => {
                                 <FontAwesomeIcon icon={faUser} size="lg" />
                                 <Text ml="20px">Posted by</Text>
                             </Flex>
-                            <Stars />
+                            <Stars {...rating}/>
                         </Flex>
                         <Flex align="center">
-                            <Text ml="37px" fontSize="20px" fontWeight="800">Jasper Tan</Text>
+                            <Text ml="37px" fontSize="20px" fontWeight="800">{name}</Text>
                         </Flex>
                     </Box>
                     <Box margin="20px 20px 0px 20px">
                         <Flex align="center" >
                             <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" />
                             <Text ml="20px">From</Text>
-                            <Text ml="40px" fontSize="20px" fontWeight="700">Japan</Text>
+                            <Text ml="40px" fontSize="20px" fontWeight="700">{fromCountry}</Text>
                         </Flex>
                         <Flex align="center" >
                             <Text ml="37px">To</Text>
-                            <Text ml="60px" fontSize="20px" fontWeight="700">Hong Kong</Text>
+                            <Text ml="60px" fontSize="20px" fontWeight="700">{toCountry}</Text>
                         </Flex>
                     </Box>
                     <Box margin="20px 20px 0px 20px">
@@ -53,40 +53,19 @@ const SmallCard = () => {
                             <FontAwesomeIcon icon={faBox} size="lg" />
                             <Text ml="17px">Dimension</Text>
                         </Flex>
-                        <Text ml="38px" fontSize="20px" fontWeight="700" mb="25px">200 cm x 200 cm x 300 cm</Text>
+                        <Text ml="38px" fontSize="20px" fontWeight="700" mb="25px">{dimension}</Text>
                         <Text ml="37px" mb="7px">Weight</Text>
-                        <Text ml="38px" fontSize="20px" fontWeight="700" mb="18px">25 kg</Text>
+                        <Text ml="38px" fontSize="20px" fontWeight="700" mb="18px">{weight} kg</Text>
                     </Box>
                     <Box margin = "20px 20px 0px 20px">
                         <Flex align = "center">
                             <FontAwesomeIcon icon = {faDollarSign} size = "lg" />
-                            <Text ml = "28px" fontSize = "20px" fontWeight = "800">87 HKD</Text>
+                            <Text ml = "28px" fontSize = "20px" fontWeight = "800">{price} HKD</Text>
                         </Flex>
                         
                     </Box>
-
-                </Box>
-                {/* <Box>
-                    <Image height="200px" width="400px" borderRadius="lg" src={property.imageUrl} alt={property.imageAlt} />
-                </Box> */}
-            </Flex>
-
-            {/* <Flex justifyContent="space-around">
-                <Box height="650px" width="400px" borderRadius="lg">
-                    <Image height="200px" width="400px" borderRadius="lg" src={property.imageUrl} alt={property.imageAlt} />
-                </Box>
-                <Box>
-                    <Image height="200px" width="400px" borderRadius="lg" src={property.imageUrl} alt={property.imageAlt} />
                 </Box>
             </Flex>
-            <Flex justifyContent="space-around">
-                <Box height="650px" width="400px" borderRadius="lg">
-                    <Image height="200px" width="400px" borderRadius="lg" src={property.imageUrl} alt={property.imageAlt} />
-                </Box>
-                <Box>
-                    <Image height="200px" width="400px" borderRadius="lg" src={property.imageUrl} alt={property.imageAlt} />
-                </Box>
-            </Flex> */}
         </>
     )
 }

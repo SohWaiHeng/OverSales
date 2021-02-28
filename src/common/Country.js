@@ -12,6 +12,7 @@ const CountryList = {
     'USA': 'https://static5.depositphotos.com/1030296/395/i/950/depositphotos_3958211-stock-photo-new-york-cityscape-tourism-concept.jpg', 
     'Mexico': 'https://post.healthline.com/wp-content/uploads/2020/09/1105-Does_Mexico_Have_Better_Healthcare_Than_the_United_States-1296x728-header-1200x628.jpg',
     'Spain': 'https://www.studyandgoabroad.com/wp-content/uploads/2018/10/studyspain.jpg', 
-    'Italy': 'https://www.atlanticcouncil.org/wp-content/uploads/2020/09/Rome-coroavirus-large-1024x683.jpg'}
+    'Italy': 'https://www.atlanticcouncil.org/wp-content/uploads/2020/09/Rome-coroavirus-large-1024x683.jpg'
+}
 
 export default CountryList;
