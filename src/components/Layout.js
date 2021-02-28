@@ -7,18 +7,17 @@ import { Box } from "@chakra-ui/react";
 const Content = styled.div`
     padding: 20px 40px;
     width: 100%;
+    height: 100%;
 `
 
 const Container = styled.div`
     display: flex;
+    align-items: stretch;
 ` 
 
 const SidebarContainer = styled.div`
-    height: 100vh;
     width: 80px;
     background-color: ${Color.green3};
-    display: flex;
-    flex-direction: column;
     padding: 10px 0px;
 `
 
@@ -32,7 +31,7 @@ const IconContainer = styled.div`
 
 const Layout = (props) => {
     return (
-        <Box minH = {"100vh"} font>
+        <div style={{height: "100%"}}>
             {/* navbar */}
             <Box
                 w = "full"
@@ -51,8 +50,7 @@ const Layout = (props) => {
                     { props.children }
                 </Content>
             </Container>
-            
-        </Box>
+        </div>
     );
 }
 
