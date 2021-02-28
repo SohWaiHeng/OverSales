@@ -162,11 +162,10 @@ const Sidebar = () => {
                                 <Button pb = "2px" rounded = "20px" size = "lg" bgColor = "#FF616A" color = "#FEFFFF">Reset</Button>
                             </Stack>
                         </DrawerBody>
-
-                    </DrawerContent>
-                </DrawerOverlay>
-            </Drawer>
-        </Box>
+                     </DrawerContent>
+                 </DrawerOverlay>
+             </Drawer>
+         </Box>
     )
 }
 
