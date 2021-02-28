@@ -8,11 +8,11 @@ import { Flex } from "@chakra-ui/react";
 const Stars = () => {
     return (
         <Flex>
-            <FontAwesomeIcon icon = {unfilledStar} />
-            <FontAwesomeIcon icon = {filledStar} />
-            <FontAwesomeIcon icon = {filledStar} />
-            <FontAwesomeIcon icon = {filledStar} />
-            <FontAwesomeIcon icon = {filledStar} />
+            <FontAwesomeIcon size = "2x" icon = {unfilledStar} />
+            <FontAwesomeIcon size = "2x" icon = {filledStar} />
+            <FontAwesomeIcon size = "2x" icon = {filledStar} />
+            <FontAwesomeIcon size = "2x" icon = {filledStar} />
+            <FontAwesomeIcon size = "2x" icon = {filledStar} />
         </Flex>
     );
 }
