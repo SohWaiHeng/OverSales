@@ -64,7 +64,14 @@ const Home = () => {
         return (
             <Box mt = "50px">
                 {filteredList.map(() => {
-                    if (i % 2 === 0 && i < filteredList.length) {
+                    if (filteredList.length === 1) {
+                        return (
+                            <Flex>
+                                <SmallCard {...filteredList[0]} />
+                            </Flex>
+                        )
+                    }
+                    else if (i % 2 === 0 && i < filteredList.length) {
                         i += 2;
                         return (
                             <Flex justifyContent = "space-around" mb = "100px">
