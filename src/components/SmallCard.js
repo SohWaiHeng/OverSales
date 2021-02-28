@@ -2,8 +2,7 @@ import React from "react";
 import Color from "../common/Color";
 import { Box, Image,Flex, Text, Button } from "@chakra-ui/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faMapMarkerAlt, faBox, faDollarSign, faExpandAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faMapMarkerAlt, faBox, faDollarSign, faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import Stars from "./Stars";
 
 import Country from "../common/Country";
@@ -26,7 +25,7 @@ const SmallCard = ({name, rating, width, height, length, fromCountry, toCountry,
                 <Box margin="0px 20px 0px 30px">
                     <Flex justifyContent="space-between">
                         <Flex align="center" justifyContent="space-around">
-                            <FontAwesomeIcon icon={faUser} size="lg" />
+                            <FontAwesomeIcon icon={faUser} size = "lg" />
                             <Text ml="20px">Posted by</Text>
                         </Flex>
                         <Stars number = {rating}/>
@@ -57,7 +56,7 @@ const SmallCard = ({name, rating, width, height, length, fromCountry, toCountry,
                 </Box>
                 <Box margin = "20px 20px 0px 30px">
                     <Flex align = "center">
-                        <FontAwesomeIcon icon = {faDollarSign} size = "lg" />
+                        <FontAwesomeIcon icon = {faDollarSign} size = "2x" />
                         <Text ml = "28px" fontSize = "30px" fontWeight = "800" textColor={Color.green3}>{price} HKD</Text>
                     </Flex>
                 </Box>
