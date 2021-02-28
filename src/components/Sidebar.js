@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import { SearchIcon } from "@chakra-ui/icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAlignJustify} from "@fortawesome/free-solid-svg-icons";
+import { faAlignJustify, faFilter, faMapMarkerAlt, faBox, faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import Color from "../common/Color";
 import styled from 'styled-components';
-import { Box, Button, Text, Drawer, DrawerBody, DrawerFooter, DrawerOverlay, 
+import { Box, Button, Flex, Stack, Text, Drawer, DrawerBody, DrawerFooter, DrawerOverlay, 
     DrawerContent, DrawerCloseButton, useDisclosure, FormControl, FormLabel, 
     FormErrorMessage, Input, InputGroup, InputRightElement, Select } from "@chakra-ui/react";
 
@@ -74,7 +74,7 @@ const Sidebar = () => {
                                     <Text ml = "25px">Dimension</Text>
                                 </Flex>
 
-                                <Flex>
+                                <Flex mt = "20px">
                                     <Stack spacing = {3}>
                                         <Flex align = "center">
                                             <FormLabel>Width:</FormLabel>
@@ -103,7 +103,7 @@ const Sidebar = () => {
                                     </Flex>
                                 </Flex>
 
-                                <Flex align = "center">
+                                <Flex mt = "20px" align = "center">
                                     <FontAwesomeIcon icon = {faDollarSign} />
                                     <Text ml = "25px">Price Range</Text>
                                 </Flex>
@@ -127,7 +127,7 @@ const Sidebar = () => {
                                     </Box>
                                 </Flex>
 
-                                <Flex align = "center">
+                                <Flex mt = "15px" align = "center">
                                     <FontAwesomeIcon icon = {faDollarSign} />
                                     <Text ml = "25px">Minimum Rating:</Text>
                                 </Flex>
