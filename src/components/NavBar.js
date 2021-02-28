@@ -3,7 +3,7 @@ import Color from "../common/Color";
 import styled from 'styled-components'
 import { Link as RouterLink } from "react-router-dom";
 import { Stack, Flex, Text, Box } from "@chakra-ui/react";
-
+import Logo from "../asset/logo.png";
 
 const Container = styled(Flex)`
     box-shadow: 0px 1px 5px ${Color.green4};
@@ -22,7 +22,9 @@ const LogoNameContainer = styled.div`
     height: 100%;
 `
 
-const LogoContainer = styled.img`
+const LogoContainer = styled.div`
+    width: 80px;
+    padding: 10px;
 `
 
 const NavContainer = styled(Stack)`
@@ -49,6 +51,9 @@ const NavBar = () => {
             py = {3}>
             <RouterLink to = "/">
                 <LogoNameContainer>
+                    <LogoContainer>
+                        <img src={Logo}></img>
+                    </LogoContainer>
                     <Text color = {Color.green3}>Over</Text>
                     <Text color = {Color.green4}>sales</Text>
                 </LogoNameContainer>
