@@ -1,4 +1,4 @@
-import Layout from "./shared/Layout";
+import Layout from "../components/Layout";
 
 const Home = () => {
     return (
