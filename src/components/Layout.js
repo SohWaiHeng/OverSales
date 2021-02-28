@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "./NavBar";
+import Color from "../common/Color";
 import { Box } from "@chakra-ui/react";
 
 const Layout = ({children}) => {
@@ -8,7 +9,7 @@ const Layout = ({children}) => {
             {/* navbar */}
             <Box
                 w = "full"
-                bgColor = "white"
+                bgColor = {Color.white}
                 >
                 <NavBar />
             </Box>
