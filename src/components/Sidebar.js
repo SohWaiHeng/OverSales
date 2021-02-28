@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
+import { SearchIcon } from "@chakra-ui/icons";
 import { Box, Button, Text, Drawer, DrawerBody, DrawerFooter, DrawerOverlay, 
     DrawerContent, DrawerCloseButton, useDisclosure, FormControl, FormLabel, 
-    FormErrorMessage, Input, InputRightElement } from "@chakra-ui/react";
+    FormErrorMessage, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 
 
 const Sidebar = () => {
@@ -24,14 +25,15 @@ const Sidebar = () => {
                         <DrawerCloseButton />
 
                         <DrawerBody pl = "45px" pt = "30px">
-                            {/* <FormControl>
+                            <FormControl>
                                 <FormLabel>Search by profile</FormLabel>
-                                <Input>
-                                    <InputRightElement>
-                                        
-                                    </InputRightElement>
-                                </Input>
-                            </FormControl> */}
+                                <InputGroup>
+                                    <Input rounded = "20px" placeholder = "Trafalgar D Law" />
+                                    <InputRightElement children = {<SearchIcon />} />
+                                </InputGroup>
+
+                                <FormLabel>Filter Options</FormLabel>
+                            </FormControl>
                         </DrawerBody>
 
                         <DrawerFooter>

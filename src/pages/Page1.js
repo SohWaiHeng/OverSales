@@ -1,73 +1,76 @@
 import React from "react";
 import Layout from "../components/Layout";
+import Color from "../common/Color";
+import styled from 'styled-components'
+import { Flex, SimpleGrid, GridItem } from "@chakra-ui/react";
 import { Box, Image, Badge, StarIcon } from "@chakra-ui/react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+
+const property = {
+    imageUrl: "https://cdn.thecrazytourist.com/wp-content/uploads/2018/08/ccimage-shutterstock_571221049.jpg",
+    imageAlt: "Kuala Lumpur, Malaysia"
+}
+
+const Cart = styled(Box)`
+    box-shadow: 0px 1px 5px ${Color.green4};
+    height: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+`
 
 const Page1 = () => {
-    const property = {
-        imageUrl: "https://cdn.thecrazytourist.com/wp-content/uploads/2018/08/ccimage-shutterstock_571221049.jpg",
-        imageAlt: "Rear view of modern home with pool",
-        beds: 3,
-        baths: 2,
-        title: "Modern home in city center in the heart of historic Los Angeles",
-        formattedPrice: "$1,900.00",
-        reviewCount: 34,
-        rating: 4,
-    }
-
     return (
-        <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-            <Image src={property.imageUrl} alt={property.imageAlt} />
-
-            <Box p="6">
-                <Box d="flex" alignItems="baseline">
-                    <Badge borderRadius="full" px="2" colorScheme="teal">
-                        New
-              </Badge>
-                    <Box
-                        color="gray.500"
-                        fontWeight="semibold"
-                        letterSpacing="wide"
-                        fontSize="xs"
-                        textTransform="uppercase"
-                        ml="2"
-                    >
-                        {property.beds} beds &bull; {property.baths} baths
-              </Box>
+        <Layout>
+            {/* <Grid
+                h="500px"
+                templateColumns="repeat(4, 1fr)"
+                gap={3}
+                columnGap="100px"
+                paddingTop="20px"
+                paddingLeft="200px"
+                paddingRight="50px"
+            >
+                <GridItem colSpan={2} imageUrl={property.imageUrl} />
+                <GridItem colSpan={2} bg="papayawhip" imageUrl={property.imageUrl} />
+            </Grid> */}
+            {/* <SimpleGrid columns={2}>
+                <Box maxW="sm" borderRadius="lg" d="flex" overflow="hidden" bgColor = "red">
+                    <Image src={property.imageUrl} alt={property.imageAlt} />
                 </Box>
-
-                <Box
-                    mt="1"
-                    fontWeight="semibold"
-                    as="h4"
-                    lineHeight="tight"
-                    isTruncated
-                >
-                    {property.title}
+                <Box maxW="sm" borderRadius="lg" d="flex" alignItems="center" overflow="hidden">
+                    <Image src={property.imageUrl} alt={property.imageAlt} />
                 </Box>
+            </SimpleGrid> */}
+            <Flex justifyContent = "space-around">
+                <Box height = "650px" width = "400px" borderRadius="lg">
+                    <Image height = "200px" width = "400px" borderRadius ="lg" borderEndStartRadius ="sm" borderEndEndRadius ="sm" src={property.imageUrl} alt={property.imageAlt} />
+                    <br></br>
+                    <FontAwesomeIcon icon={faUser} />
 
+                </Box>
                 <Box>
-                    {property.formattedPrice}
-                    <Box as="span" color="gray.600" fontSize="sm">
-                        / wk
-              </Box>
+                    <Image height = "200px" width = "400px" borderRadius="lg" src={property.imageUrl} alt={property.imageAlt} />
                 </Box>
-
-                <Box d="flex" mt="2" alignItems="center">
-                    {Array(5)
-                        .fill("")
-                        .map((_, i) => (
-                            <StarIcon
-                                key={i}
-                                color={i < property.rating ? "teal.500" : "gray.300"}
-                            />
-                        ))}
-                    <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                        {property.reviewCount} reviews
-              </Box>
+            </Flex>
+            <Flex justifyContent = "space-around">
+                <Box height = "650px" width = "400px" borderRadius="lg">
+                    <Image height = "200px" width = "400px" borderRadius ="lg" src={property.imageUrl} alt={property.imageAlt} />
                 </Box>
-            </Box>
-        </Box>
+                <Box>
+                    <Image height = "200px" width = "400px" borderRadius="lg" src={property.imageUrl} alt={property.imageAlt} />
+                </Box>
+            </Flex>
+            <Flex justifyContent = "space-around">
+                <Box height = "650px" width = "400px" borderRadius="lg">
+                    <Image height = "200px" width = "400px" borderRadius ="lg" src={property.imageUrl} alt={property.imageAlt} />
+                </Box>
+                <Box>
+                    <Image height = "200px" width = "400px" borderRadius="lg" src={property.imageUrl} alt={property.imageAlt} />
+                </Box>
+            </Flex>
+        </Layout>
     )
 }
 

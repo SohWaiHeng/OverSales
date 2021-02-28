@@ -1,6 +1,12 @@
 import React from "react";
 import NavBar from "./NavBar";
+import Color from "../common/Color";
+import styled from 'styled-components'
 import { Box } from "@chakra-ui/react";
+
+const Content = styled.div`
+    padding: 20px 40px;
+`
 
 const Layout = ({children}) => {
     return (
@@ -8,18 +14,15 @@ const Layout = ({children}) => {
             {/* navbar */}
             <Box
                 w = "full"
-                bgColor = "white"
+                bgColor = {Color.white}
                 >
                 <NavBar />
             </Box>
 
             {/* page content */}
-            <Box
-                mx = "auto"
-                width = {["95%", "93%", "90%", "80%", "70%"]}
-                >
+            <Content>
                 { children }
-            </Box>
+            </Content>
         </Box>
     );
 }
