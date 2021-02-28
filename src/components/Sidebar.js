@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import { Box, Button, Flex, Stack, Text, Drawer, DrawerBody, DrawerOverlay, 
     DrawerContent, useDisclosure, FormControl, FormLabel, 
     FormErrorMessage, Input, InputGroup, InputRightElement, Select } from "@chakra-ui/react";
-
 import Stars from "../components/Stars";
 
 const ButtonContainer = styled.div`

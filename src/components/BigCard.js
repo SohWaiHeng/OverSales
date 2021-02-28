@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faBox, faDollarSign, faCompressAlt } from "@fortawesome/free-solid-svg-icons";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
+import Stars from "../components/Stars";
 
 const Container = styled.div`
     width: 700px;
@@ -121,6 +122,9 @@ const BigCard = (props) => {
                         <div>
                             <DescText>First I hit the drum, then I fuck your mum</DescText>
                         </div>
+                    </div>
+                    <div style={{display:"flex", flexDirection:"column"}}>
+                        <Stars number={0}></Stars>
                     </div>
                 </Row>
                 <Row>
