@@ -1,6 +1,6 @@
 import React from "react";
 import Color from "../common/Color";
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { Link as RouterLink } from "react-router-dom";
 import { Stack, Flex, Text, Box } from "@chakra-ui/react";
 import Logo from "../asset/logo.png";
@@ -10,6 +10,7 @@ const Container = styled(Flex)`
     height: 100px;
     padding-top: 0;
     padding-bottom: 0;
+    z-index: 99;
 `
 
 const LogoNameContainer = styled.div`
@@ -42,6 +43,10 @@ const NavItem = styled(Box)`
     padding: 10px;
     font-size: 1.5rem;
     font-weight: 700;
+    :hover {
+        cursor: pointer;
+        opacity: 0.5;
+    }
 `
 
 const NavBar = () => {
