@@ -6,8 +6,6 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faMapMarkerAlt, faBox, faDollarSign, faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import Stars from "./Stars";
 
-import BigCard from "../components/BigCard";
-
 const property = {
     imageUrl: "https://cdn.thecrazytourist.com/wp-content/uploads/2018/08/ccimage-shutterstock_571221049.jpg",
     imageAlt: "Kuala Lumpur, Malaysia"

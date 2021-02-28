@@ -5,7 +5,7 @@ import BigCard from "../components/BigCard";
 import SellerList from "../common/Seller";
 import SmallCard from "../components/SmallCard";
 
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, useDisclosure, Modal, ModalOverlay, ModalContent, ModalFooter, ModalBody, ModalCloseButton, Button } from "@chakra-ui/react";
 
 const Home = () => {
     const [filteredList, setFilteredList] = useState([]);
@@ -19,6 +19,8 @@ const Home = () => {
     const [minPrice, setMinPrice] = useState(0);
     const [maxPrice, setMaxPrice] = useState(0);
     const [rating, setRating] = useState(0);
+    const [selected, setSelected] = useState(0);
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     useEffect(()=>{
         setFilteredList(SellerList);
@@ -66,16 +68,27 @@ const Home = () => {
                 {filteredList.map(() => {
                     if (i % 2 === 0 && i < filteredList.length) {
                         i += 2;
+                        let k = i;
                         return (
                             <Flex justifyContent = "space-around" mb = "100px">
-                                <SmallCard {...filteredList[i - 2]} />
-                                <SmallCard {...filteredList[i - 1]} />
+                                <div onClick={()=>{openModal(k-2)}}>
+                                    <SmallCard {...filteredList[i - 2]}/>
+                                </div>
+                                <div onClick={()=>{openModal(k-1)}}>
+                                    <SmallCard {...filteredList[i - 1]} />
+                                </div>
+                                
                             </Flex>
                         )
                     }
                 })}
             </Box>
         )
+    }
+
+    const openModal = (n) => {
+        setSelected(n);
+        onOpen();
     }
 
     return (
@@ -102,6 +115,12 @@ const Home = () => {
                             setRating={setRating}
         />}>
             <ArrangeComponent />
+            <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent maxW="700px" overflow="hidden">
+                    <BigCard {...filteredList[selected]}></BigCard>
+                </ModalContent>
+            </Modal>  
         </Layout>
     );
 }

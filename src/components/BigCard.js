@@ -9,7 +9,6 @@ import Stars from "../components/Stars";
 const Container = styled.div`
     width: 700px;
     background: ${Color.green1};
-    border-radius: 30px;
     overflow-y: hidden;
 `
 
@@ -115,16 +114,18 @@ const BigCard = (props) => {
                     <ProfilePicContainter>
                         <img src="https://media-exp1.licdn.com/dms/image/C4D03AQF1zPYATG9muA/profile-displayphoto-shrink_800_800/0/1597227814301?e=1620259200&v=beta&t=qUSpTtyuU4VH3GTlGxhbr4lGxCCw_8p90rERVEW9Lfk"></img>
                     </ProfilePicContainter>
-                    <div>
+                    <div style={{display:"flex", justifyContent:"space-between", width: "450px"}}>
                         <div>
-                            <MainText>Tan Shan Huang</MainText>
+                            <div>
+                                <MainText>{props.name}</MainText>
+                            </div>
+                            <div>
+                                <DescText>{props.biography}</DescText>
+                            </div>
                         </div>
-                        <div>
-                            <DescText>First I hit the drum, then I fuck your mum</DescText>
+                        <div style={{display:"flex", flexDirection:"column"}}>
+                            <Stars number={props.rating}></Stars>
                         </div>
-                    </div>
-                    <div style={{display:"flex", flexDirection:"column"}}>
-                        <Stars number={0}></Stars>
                     </div>
                 </Row>
                 <Row>
@@ -133,11 +134,11 @@ const BigCard = (props) => {
                     </IconContainer>
                     <div>
                         <StaticText>From </StaticText>
-                        <MainText>Japan</MainText>
+                        <MainText>{props.fromCountry}</MainText>
                     </div>
                     <div>
                         <StaticText>To </StaticText>
-                        <MainText>Singapore</MainText>
+                        <MainText>{props.toCountry}</MainText>
                     </div>
                 </Row>
                 <Row>
@@ -146,11 +147,11 @@ const BigCard = (props) => {
                     </IconContainer>
                     <div>
                         <StaticText>Dimension</StaticText> <br/>
-                        <MainText>10cm x 20cm x 30cm</MainText>
+                        <MainText>{props.width}cm x {props.length}cm x {props.height}cm</MainText>
                     </div>
                     <div>
                         <StaticText>Weight</StaticText> <br/>
-                        <MainText>888</MainText>
+                        <MainText>{props.width}kg</MainText>
                     </div>
                 </Row>
                 <Row>
@@ -158,7 +159,7 @@ const BigCard = (props) => {
                         <FontAwesomeIcon icon = {faDollarSign} size="2x"/> 
                     </IconContainer>
                     <div>
-                        <MainText style={{fontSize: "2rem"}}>90HKD</MainText>
+                        <MainText style={{fontSize: "2rem"}}>{props.price}HKD</MainText>
                     </div>
                 </Row>
                 <NotesContainer>
@@ -166,7 +167,7 @@ const BigCard = (props) => {
                         <StaticText>Additional Notes</StaticText>
                     </div>
                     <div>
-                        <DescText>You are perfect. To think anything less is as pointless as a river thinking that it’s got too many curves or that it moves too slowly or that its rapids are too rapid. Says who? You’re on a journey with no defined beginning, middle or end. There are no wrong twists and turns. There is just being. And your job is to be as you as you can be. This is why you’re here. To shy away from who you truly are would leave the world you-less. You are the only you there is and ever will be. I repeat, you are the only you there is and ever will be. Do not deny the world its one and only chance to bask in your brilliance.</DescText>
+                        <DescText>{props.additionalInformation}</DescText>
                     </div>
                 </NotesContainer>
                 <Row>

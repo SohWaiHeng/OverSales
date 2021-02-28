@@ -1,4 +1,3 @@
-
 const SellerList = [
     {
         'name': 'Jasper Tan',
